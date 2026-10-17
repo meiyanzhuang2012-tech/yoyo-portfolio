@@ -80,9 +80,10 @@ section{padding:72px 0}
 footer{border-top:1px solid var(--line);padding:36px 0 46px;color:var(--dim);font-size:13px}
 footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--acc);text-decoration:none}
-.reveal{transition:.6s ease}
-.js .reveal{opacity:0;transform:translateY(16px)}
-.js .reveal.in{opacity:1;transform:none}
+.reveal{transition:transform .6s ease}
+/* 只用位移做进场，不用 opacity：任何环境（含无头截图/动画被节流）正文都保持可见 */
+.js .reveal{transform:translateY(16px)}
+.js .reveal.in{transform:none}
 </style>
 </head>
 <body>

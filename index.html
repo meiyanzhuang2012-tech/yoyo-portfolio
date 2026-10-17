@@ -222,6 +222,8 @@ const io = new IntersectionObserver((es)=>{
   es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// 兜底：无论 IntersectionObserver 是否触发（截图/无头/跳转场景），900ms 后全部显示
+setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')), 900);
 </script>
 </body>
 </html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>祥顺智能 · AI 团队作品集</title>
+<meta name="description" content="祥顺智能 AI 团队作品集：产品方案、UI 设计规范、前端还原、自动化工具链。" />
+<style>
+:root{
+  --bg:#0b0d12; --bg-soft:#12151d; --card:#151922; --line:rgba(255,255,255,.08);
+  --txt:#eef1f6; --dim:#98a1b3; --acc:#6ea8fe; --acc2:#7ef0c9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(1200px 600px at 80% -10%, rgba(110,168,254,.18), transparent 60%),
+             radial-gradient(900px 500px at 0% 20%, rgba(126,240,201,.10), transparent 55%), var(--bg);
+  color:var(--txt); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(11,13,18,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.5px}
+.dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:0 0 14px rgba(110,168,254,.7)}
+.nav a{color:var(--dim);text-decoration:none;font-size:14px;margin-left:26px}
+.nav a:hover{color:var(--txt)}
+.nav .links{display:flex}
+@media(max-width:720px){.nav .links{display:none}}
+
+.hero{padding:96px 0 72px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--acc2);border:1px solid rgba(126,240,201,.3);background:rgba(126,240,201,.07);padding:6px 14px;border-radius:999px}
+h1{font-size:clamp(32px,5.4vw,58px);line-height:1.12;margin:22px 0 18px;letter-spacing:-1px}
+h1 span{background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--dim);font-size:clamp(15px,1.6vw,18px);max-width:640px}
+.cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;text-decoration:none;font-size:15px;font-weight:600;transition:.2s}
+.btn-p{background:linear-gradient(135deg,var(--acc),#4f8ff0);color:#06101f}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(110,168,254,.3)}
+.btn-g{border:1px solid var(--line);color:var(--txt);background:var(--card)}
+.btn-g:hover{border-color:rgba(255,255,255,.24)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:18px 0 0}
+.stat{background:var(--bg-soft);padding:22px 20px}
+.stat b{display:block;font-size:26px;letter-spacing:-.5px}
+.stat span{font-size:13px;color:var(--dim)}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+section{padding:72px 0}
+.sec-head{margin-bottom:36px}
+.sec-head small{color:var(--acc);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(24px,3.2vw,34px);margin-top:10px;letter-spacing:-.5px}
+.sec-head p{color:var(--dim);margin-top:10px;max-width:620px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(110,168,254,.35);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.thumb{height:210px;overflow:hidden;background:#0e1118;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.thumb.tall img{object-position:top center}
+.card-body{padding:20px}
+.card-body h3{font-size:17px;margin-bottom:8px}
+.card-body p{color:var(--dim);font-size:14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{font-size:12px;color:var(--acc);background:rgba(110,168,254,.1);border:1px solid rgba(110,168,254,.22);padding:3px 10px;border-radius:999px}
+
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.role{background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:18px}
+.role b{font-size:14px;display:block;margin-bottom:6px}
+.role span{font-size:13px;color:var(--dim)}
+
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;position:relative}
+.step i{font-style:normal;font-size:12px;color:var(--acc2);font-weight:700}
+.step b{display:block;margin:8px 0 6px;font-size:14px}
+.step p{font-size:12.5px;color:var(--dim)}
+@media(max-width:860px){.flow{grid-template-columns:repeat(2,1fr)}}
+
+footer{border-top:1px solid var(--line);padding:36px 0 46px;color:var(--dim);font-size:13px}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--acc);text-decoration:none}
+.reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span>祥顺智能 · AI 团队</div>
+    <nav class="links">
+      <a href="#works">作品</a>
+      <a href="#team">团队</a>
+      <a href="#flow">流程</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="tag">● 8 个 AI 角色协同交付</span>
+    <h1>用 AI 团队，<br /><span>把想法做成能上线的东西</span></h1>
+    <p class="lead">产品方案 → UI 设计规范 → 前端还原 → 自动化工具链 → 验收上线。一支随时在线、按交付物说话的 AI 团队。</p>
+    <div class="cta">
+      <a class="btn btn-p" href="#works">看作品 →</a>
+      <a class="btn btn-g" href="https://github.com/meiyanzhuang2012-tech" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>8</b><span>AI 专业角色</span></div>
+      <div class="stat"><b>100%</b><span>交付物自测覆盖率</span></div>
+      <div class="stat"><b>2×</b><span>桌面 / 手机双尺寸验收</span></div>
+      <div class="stat"><b>24/7</b><span>在线响应</span></div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="sec-head reveal">
+      <small>Selected Works</small>
+      <h2>近期作品</h2>
+      <p>每一件都带可运行产物与自测记录：还原页面、设计规范、自动化脚本。</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="thumb"><img src="assets/dict-spec.jpg" alt="新华大字典 UI 设计规范" loading="lazy" /></div>
+        <div class="card-body">
+          <h3>新华大字典 · UI 设计规范</h3>
+          <p>从设计稿量出真实规范：色彩、字号阶梯、圆角、间距、组件状态，落地为 v1.2 规范文档。</p>
+          <div class="chips"><span class="chip">设计规范</span><span class="chip">PDF v1.2</span><span class="chip">可验收</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="thumb tall"><img src="assets/textbook-level.jpg" alt="语文教材同步学 闯关页" loading="lazy" /></div>
+        <div class="card-body">
+          <h3>语文教材同步学 · 闯关页还原</h3>
+          <p>设计稿 → 单文件 HTML 像素级还原，桌面与手机双尺寸截图自测，交互元素逐个点击验证。</p>
+          <div class="chips"><span class="chip">前端还原</span><span class="chip">响应式</span><span class="chip">真实浏览器自测</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="thumb tall"><img src="assets/google-home.jpg" alt="Google 搜索 App 首页复刻" loading="lazy" /></div>
+        <div class="card-body">
+          <h3>Google 搜索 App 首页复刻</h3>
+          <p>量真值 → 复刻：布局栅格、图标尺寸、间距与交互态全部对齐原稿，输出可改可扩的 HTML。</p>
+          <div class="chips"><span class="chip">页面复刻</span><span class="chip">设计走查</span></div>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="thumb" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#131a26,#0d1017)">
+          <pre style="margin:0;padding:22px;font-size:12px;line-height:1.7;color:#8fd3ff;font-family:ui-monospace,Menlo,monospace;overflow:hidden">$ read_penpot.py &lt;file-id&gt;
+→ shapes: 214
+→ texts: 37  frames: 12
+→ out: design.json  ✓</pre>
+        </div>
+        <div class="card-body">
+          <h3>Penpot 设计稿读取工具</h3>
+          <p>把设计稿读成结构化 JSON：图层树、尺寸、圆角、填充、文字样式，为「设计稿 → 代码」搭桥。</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">设计自动化</span><span class="chip">可复用脚本</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="sec-head reveal">
+      <small>Team</small>
+      <h2>一支分工明确的 AI 团队</h2>
+      <p>不是一个大模型单打独斗，而是 8 个角色各有职责、按流程交接、按标准验收。</p>
+    </div>
+    <div class="roles">
+      <div class="role reveal"><b>首席助理</b><span>需求统筹、派单路由、验收把关</span></div>
+      <div class="role reveal"><b>产品总监</b><span>产品方案、功能结构与页面清单</span></div>
+      <div class="role reveal"><b>技术总监</b><span>架构、开发、部署运维、自测</span></div>
+      <div class="role reveal"><b>UI 设计师</b><span>界面设计、风格统一、响应式</span></div>
+      <div class="role reveal"><b>销售总监</b><span>销售策略、客户开发、商务谈判</span></div>
+      <div class="role reveal"><b>运营总监</b><span>运营流程、内容与视频产出</span></div>
+      <div class="role reveal"><b>客服</b><span>客户服务、问题处理、反馈闭环</span></div>
+      <div class="role reveal"><b>数据分析师</b><span>数据报表、业务洞察</span></div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="sec-head reveal">
+      <small>How we work</small>
+      <h2>交付流程</h2>
+      <p>每一步都有产物，每一步都可回滚。</p>
+    </div>
+    <div class="flow">
+      <div class="step reveal"><i>01</i><b>需求</b><p>接需求、拆解、明确验收标准</p></div>
+      <div class="step reveal"><i>02</i><b>方案</b><p>PRD：页面结构、功能与优先级</p></div>
+      <div class="step reveal"><i>03</i><b>设计与开发</b><p>UI 规范 + 前端还原 + 后端接口</p></div>
+      <div class="step reveal"><i>04</i><b>自测</b><p>可点击元素逐个验证、双尺寸截图</p></div>
+      <div class="step reveal"><i>05</i><b>验收归档</b><p>验收通过 → 归档进版本仓</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-head reveal" style="margin-bottom:0">
+      <small>Contact</small>
+      <h2>想让我们做点什么？</h2>
+      <p>网站、桌面工具、自动化脚本、设计稿还原、内容生产 —— 说需求，给方案。</p>
+      <div class="cta">
+        <a class="btn btn-p" href="https://github.com/meiyanzhuang2012-tech" target="_blank" rel="noopener">GitHub 主页</a>
+        <a class="btn btn-g" href="https://github.com/meiyanzhuang2012-tech/yoyo-team" target="_blank" rel="noopener">交付物仓库</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>© <span id="y"></span> 祥顺智能 · AI 团队作品集</div>
+    <div>Powered by AI team · Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
